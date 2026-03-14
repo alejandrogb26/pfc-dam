@@ -1,0 +1,8 @@
+{
+    "udp_host": "0.0.0.0",
+    "udp_port": 9000,
+    "max_datagram_bytes": 4096,
+    "mongo_uri": "mongodb://<monitoring_user>:<password_user>@X.X.X.X/monitoring",
+    "mongo_db": "monitoring",
+    "mongo_collection": "host_metrics"
+}

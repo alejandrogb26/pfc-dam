@@ -1,0 +1,25 @@
+// 1) Crear DB y usuario (ajusta)
+use monitoring;
+
+db.createUser({
+  user: "monitoring_user",
+  pwd: "PASSWORD_MONITORING_USER",
+  roles: [{ role: "readWrite", db: "monitoring" }]
+});
+
+// 2) Crear colección time-series
+db.createCollection("host_metrics", {
+  timeseries: {
+    timeField: "ts",
+    metaField: "server_id",
+    granularity: "seconds"
+  }
+});
+
+// 3) Índices útiles
+db.host_metrics.createIndex({ server_id: 1, ts: -1 });
+
+// 4) (Opcional) TTL: borrar datos antiguos automáticamente (ej: 30 días)
+//    30 días = 30 * 24 * 60 * 60 = 2592000 segundos
+db.host_metrics.createIndex({ ts: 1 }, { expireAfterSeconds: 2592000 });
+
