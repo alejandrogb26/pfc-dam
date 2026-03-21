@@ -28,7 +28,7 @@ El proyecto implementa un modelo de **3 capas** diseñado para la alta disponibi
 ## Repositorios del Proyecto
 Para facilitar la modularidad, el código se divide en:
 
-* **Backend (API)**: [metrics-servers-pfc](https://github.com/alejandrogb26/metrics-servers-pfc)
+* **Backend (API)**: [metrics-servers-api](https://github.com/alejandrogb26/metrics-servers-api)
 * **App Móvil (Flutter)**: []()
 * **App Desktop (Swing)**: []()
 * **Core (Este repo)**: Scripts de los Exporters, Recolector Central (RC) y archivos de inicilización de DBs.
